@@ -1,63 +1,46 @@
-let f = require('./notes');
+let notes = require('./notes');
 let fs = require('fs');
 let chalk = require('chalk');
-let yarn = require('yargs');
+let yargs = require('yargs');
 
 
-yarn.command({
+let noteUrl = './notes.txt';
+
+yargs.command({
     command: 'add',
     describe: 'Add new notes',
-    handler: function(){
-        // fs.writeFile('notes.js',)
-        console.log(yarn);
+    builder: {
+        title :{
+            describe: 'Title Of Note',
+            demandOption: true,
+            type: 'string'
+        },
+        body: {
+            describe: 'Body Of Note',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function(argv){
+        notes.addNotes(argv.title, argv.body);
     }
 })
 
-yarn.command({
+yargs.command({
     command: 'list',
     describe: 'Add new notes',
     handler: function(){
-        // fs.writeFile('notes.js',)
-        console.log(yarn);
+        console.log("List All notes");
     }
 })
 
-yarn.command({
+yargs.command({
     command: 'remove',
     describe: 'Add new notes',
     handler: function(){
         // fs.writeFile('notes.js',)
-        console.log(yarn);
+        console.log("yargs");
     }
 })
 
-yarn.command({
-    command: 'write',
-    describe: 'Add new notes',
-    handler: function(){
-        // fs.writeFile('notes.js',)
-        console.log(yarn);
-    }
-})
-
-console.log(yarn.argv);
-// console.log(chalk.blue('Hello', chalk.underline.bold('world') + '!'));
-
-yarn.command({
-    command: 'add',
-    describe: 'Add new notes',
-    handler: function(){
-        // fs.writeFile('notes.js',)
-        console.log(yarn);
-    }
-})
-
-
-yarn.command({
-    command: 'remove',
-    describe: 'Add new notes',
-    handler: function(){
-        // fs.writeFile('notes.js',)
-        console.log(yarn);
-    }
-})
+yargs.parse();
