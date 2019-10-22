@@ -1,0 +1,25 @@
+*{
+}
+.orange {
+    background-color: orange;
+  }
+  .blue {
+    background-color: blue;
+    color: white;
+  }
+  
+  .hidden {
+    display: none;
+  }
+
+  .subDiv,
+  .updateDiv{
+    display: inline-block;
+    width: 49%;
+    margin: 0 auto;
+  }
+
+  #updateForm,
+  #form{
+    visibility: hidden;
+  }

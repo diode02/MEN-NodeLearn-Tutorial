@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>JQuery</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="jquery.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+        <button id="btnToggle">Show Data</button>
+        <button id="newData">Add New Data</button>          
+        <div id="para" class="">          
+        </div>
+
+      <div id="formdiv">
+        <div class="subDiv">
+          <form id="form" action="" method="">
+            <label for="name">id</label><input type="text" id="id" name="id" value=""> <br>
+            <label for="name">first name</label><input type="text" id="first_name" name="first_name" value=""> <br>
+            <label for="name">last name</label><input type="text" id="last_name" name="last_name" value=""> <br>
+            <label for="name">email</label><input type="email" id="email" name="email" value=""><br>
+  
+            <input  id="submitNew" type="submit" value="Submit">
+          </form>
+        </div>
+
+        <div class="updateDiv">
+          <form id="updateForm" action="" method="">
+            <label for="name">id</label><input type="text" id="id" name="id" value=""> <br>
+            <label for="name">first name</label><input type="text" id="first_name" name="first_name" value=""> <br>
+            <label for="name">last name</label><input type="text" id="last_name" name="last_name" value=""> <br>
+            <label for="name">email</label><input type="email" id="email" name="email" value=""><br>
+      
+            <input  id="submitUpdate" type="submit" value="Submit">
+          </form>
+        </div>
+      </div>
+
+        <div>
+            <table id="tbl-data" class="table">
+                <tr>
+                    <th>Id</th>
+                    <th>FirstName</th>
+                    <th>LastName</th>
+                    <th>Email</th>
+                </tr>
+            </table>
+        </div>
+      </body>
+
+  </body>
+</html>
