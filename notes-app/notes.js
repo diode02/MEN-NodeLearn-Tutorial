@@ -6,25 +6,22 @@ const getNotes = ()=>{
 
 const addNotes = (title, body) =>{
     const notes = loadNotes();
-    const dupl = notes.filter(function(note){
-        return note.title === title;
-    })
+    const dupl = notes.filter((note)=> note.title === title);
     if(dupl.length===0){
         notes.push({
             title: title,
             body: body
         });
         saveNotes(notes);
+        return true;
     }else{
-        console.log("duplicate found");
+        return false
     } 
 }
 
 const removeNotes = (title) =>{
     const notes = loadNotes();
-    const dupl = notes.filter(function(note){
-        return note.title !== title;
-    })
+    const dupl = notes.filter((note)=>note.title !== title);
     saveNotes(dupl);
     if(dupl.length === notes.length){
         return false;
@@ -33,6 +30,10 @@ const removeNotes = (title) =>{
      }
 }
 
+const readNote = (title) =>{
+    const notes = loadNotes();
+    return notes.filter((note)=>note.title === title);
+}
 
 const saveNotes = (notes)=>{
     const dataJSON = JSON.stringify(notes);
@@ -51,5 +52,6 @@ const loadNotes = ()=>{
 module.exports = {
     getNotes: getNotes,
     addNotes: addNotes,
-    removeNotes: removeNotes
+    removeNotes: removeNotes,
+    readNote: readNote
 }
