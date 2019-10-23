@@ -27,20 +27,32 @@ yargs.command({
 })
 
 yargs.command({
-    command: 'list',
+    command: 'remove',
     describe: 'Add new notes',
-    handler: function(){
-        console.log("List All notes");
+    builder: {
+        title :{
+            describe: 'Title Of Note',
+            demandOption: true,
+            type: 'string'
+        }
+    },
+    handler: function(argv){
+       let status =  notes.removeNotes(argv.title);
+       if(status === false)
+            console.log(chalk.red("No item found of title = %s"),argv.title);
+        else
+            console.log(chalk.green("Item removed of title = %s"),argv.title);
     }
 })
 
 yargs.command({
-    command: 'remove',
+    command: 'list',
     describe: 'Add new notes',
     handler: function(){
-        // fs.writeFile('notes.js',)
-        console.log("yargs");
+        console.log(notes.getNotes());
     }
 })
+
+
 
 yargs.parse();
