@@ -7,6 +7,9 @@ const getNotes = ()=>{
 const addNotes = (title, body) =>{
     const notes = loadNotes();
     const dupl = notes.filter((note)=> note.title === title);
+
+    debugger;
+
     if(dupl.length===0){
         notes.push({
             title: title,
