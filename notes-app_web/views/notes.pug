@@ -3,6 +3,9 @@ link(rel="stylesheet", href="/resources/css/style.css")
 
 include ./partials/header
 
-h1 hi from pug #{name}
+h1 Notes Are Below
+
+each note in notess
+    p=note.title+" and "+note.body
 
 include ./partials/footer

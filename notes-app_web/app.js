@@ -1,10 +1,34 @@
 let notes = require('./notes');
-let fs = require('fs');
 let chalk = require('chalk');
 let yargs = require('yargs');
+let express = require('express');
+const path = require('path');
 
 
-let noteUrl = './notes.txt';
+const app = express();
+
+const publicDir = path.join(__dirname,'../public');
+app.set('view engine', 'pug');
+
+app.use(express.static(publicDir));
+
+app.get('',(req, res)=>{
+    res.render('index',{
+        title:'Node Pug Home',
+        author: 'Waqas Khan'
+    });
+})
+
+app.get('/notes/',(req, res)=>{
+    let notess = notes.getNotes();
+    res.render('notes',{
+        title:'Node Pug Home',
+        author: 'Waqas Khan',
+        notess
+    });
+})
+
+
 
 yargs.command({
     command: 'add',
@@ -24,7 +48,6 @@ yargs.command({
     handler(argv){
         notes.addNotes(argv.title, argv.body);
     }
-    
 })
 
 yargs.command({
@@ -76,3 +99,7 @@ yargs.command({
 
 
 yargs.parse();
+
+app.listen(3000,()=>{
+    console.log('Server is up')
+})

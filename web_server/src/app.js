@@ -9,17 +9,26 @@ app.use(express.static(publicDir));
 
 app.get('',(req, res)=>{
     res.render('index',{
-        name:'waqas',
-        address:'lhr'
+        title:'Node Pug Home',
+        address:'lhr',
+        author: 'Waqas Khan'
     });
 })
 
 app.get('/contact',(req, res)=>{
-    res.render('contact');
+    res.render('contact',{
+        title:'Contact Us',
+        address:'lhr',
+        author: 'Waqas Khan'
+    });
 })
 
 app.get('/help',(req, res)=>{
-    res.render('help');
+    res.render('help',{
+        title:'Help',
+        address:'lhr',
+        author: 'Waqas Khan'
+    });
 })
 
 app.get('/weather',(req, res)=>{
@@ -34,7 +43,9 @@ app.get('/weather',(req, res)=>{
 
 app.get('/help/*',(req, res)=>{
     res.render('404',{
-        name: 'Help Topic'
+        title:'Help Topic',
+        address:'lhr',
+        author: 'Waqas Khan'
     });
 })
 
