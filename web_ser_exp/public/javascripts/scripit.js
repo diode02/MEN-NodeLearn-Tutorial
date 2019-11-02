@@ -8,6 +8,7 @@ function fetchWeather() {
     setEmpty();
     let address = $('#add').val()
     // http://localhost:3000
+    // http://localhost:3000
     let url = '/weather?address='+address
     console.log(url);
     $.ajax({
