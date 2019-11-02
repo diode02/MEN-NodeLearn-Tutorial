@@ -1,12 +1,17 @@
 include ./partials/head
 link(rel="stylesheet", href="/resources/css/style.css")
-script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js")
 script(src="/resources/js/scripit.js")
 
 include ./partials/header
 
-h1 hi from pug #{name}
-input(type="text", name="add", id='add')
-button#btnToggle press me
+div.main
+    h1 Weather Application Created With PUG
+    input(type="text", name="add", id='add')
+    button#btnToggle press me
+
+    p#place
+    p#forecast
+    p#tempe
+    p#rain
 
 include ./partials/footer

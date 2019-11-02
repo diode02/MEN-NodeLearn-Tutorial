@@ -41,11 +41,12 @@ app.get('/weather',(req, res)=>{
         });
     }else{
         geoCode(req.query.address,(error, {longitude, latitude, place}={})=>{
-            if(error)
-                return res.send({error});
+            if(error){
+                return res.send({error});}
             forecast(longitude, latitude,(error,foreData)=>{
-                if(error)
+                if(error){
                     return res.send({error});
+                }
                 foreData.place = place;
                 res.send(foreData);
             })

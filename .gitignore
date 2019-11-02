@@ -3,3 +3,7 @@
 /weather/node_modules
 /web_server/node_modules
 /notes-app_web/node_modules
+/weather_express
+/notes-app_web
+/practice_express
+/express_generator/node_modules
