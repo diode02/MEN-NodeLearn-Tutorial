@@ -1,0 +1,17 @@
+include ./partials/head
+link(rel="stylesheet", href="/stylesheets/style.css")
+script(src="/javascripts/scripit.js")
+
+include ./partials/header
+
+div.main
+    h1 Weather Application Created With PUG
+    input(type="text", name="add", id='add')
+    button#btnToggle press me
+
+    p#place
+    p#forecast
+    p#tempe
+    p#rain
+
+include ./partials/footer
