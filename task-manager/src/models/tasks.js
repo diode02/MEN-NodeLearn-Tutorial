@@ -1,23 +1,21 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const taskSchemaNew = mongoose.Schema({
-  discription : {
+  discription: {
     type: String,
-    required:true,
-    trim : true
+    required: true,
+    trim: true
   },
-  completed : {
+  completed: {
     type: Boolean,
     default: false
   }
-})
+});
 
-taskSchemaNew.pre('save', async function(next){  
-  next();  
-})
+taskSchemaNew.pre("save", async function(next) {
+  next();
+});
 
-const Task = mongoose.model('Task',taskSchemaNew);
-
-
+const Task = mongoose.model("Task", taskSchemaNew);
 
 module.exports = Task;
